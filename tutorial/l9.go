@@ -2,10 +2,6 @@
 
 package main
 
-import (
-	"fmt"
-)
-
 type messageToSend struct {
 	message   string
 	sender    user
@@ -18,7 +14,12 @@ type user struct {
 }
 
 func canSendMessage(mToSend messageToSend) bool {
-
+	if mToSend.sender.name == "" || mToSend.sender.number == 0 {
+		return false
+	}
+	if mToSend.recipient.name == "" || mToSend.recipient.number == 0 {
+		return false
+	}
 	return true
 }
 
