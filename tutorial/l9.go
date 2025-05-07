@@ -2,6 +2,10 @@
 
 package main
 
+import (
+	"fmt"
+)
+
 type messageToSend struct {
 	message   string
 	sender    user
