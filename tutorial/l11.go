@@ -17,7 +17,9 @@ func main(){
 }
 
 func getUser() (User, error){
-
+return User{}, nil
 }
 
-func getUserProfile() 
+func getUserProfile() (UserID int) (Profile, error){
+	return Profile{}, nil
+}
