@@ -1,0 +1,13 @@
+//maps->m
+
+m[key]=elem
+
+elem=m[key]
+
+delete(m, key)
+
+elem, ok := m[key]
+
+if key is in m, then ok is true. if not, ok is false
+
+if key is not in the map, then elem is zero value for the map's element type.
