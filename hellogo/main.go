@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/ashish2508/mystrings"
+)
 
 func main(){
-	fmt.Println("Hello world")
+	text := "Hello world"
+
+	fmt.Println(text)
+	fmt.Println(mystrings.Reverse(&text))
 }
