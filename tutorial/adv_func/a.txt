@@ -1,0 +1,27 @@
+1. Defer keyword - allows a func to be executed automatically just before its enclosing function returns
+these are typically uses to close database connections, file handlers and the like.
+
+src,err := os.Open(srcName)
+defer src.close()
+
+2. Curry function 
+
+3. Closures - a function that references variables from outside its own function body. the function may acess and assign to the referenced variables
+example:
+
+func concatter() func(string) string {
+  doc:=""
+  return func(word string ) string {
+    doc+=word+" "
+    return doc
+  }
+}
+
+nameAggregator := concatter()
+nameAggregator("Ashish")
+nameAggregator("Jha")
+nameAggregator("is 20 years old")
+
+fmt.Println(nameAggregator("this year"))
+
+output: Ashish Jha is 20 years old this year
