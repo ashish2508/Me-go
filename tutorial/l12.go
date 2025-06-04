@@ -8,7 +8,7 @@ Error() string
 
 package main
 
-import ("main")
+import ("fmt")
 
 func sendSMSToCouple(msgToCustomer, msgToSpouse string) (float64, error)  {
 	cost, err := sendSMS(msgToCustomer); 
@@ -29,5 +29,3 @@ func sendSMS(message string) (float64, error) {
 	}
 	return costPerChar * float64(len(message)), nil
 }
-
-
