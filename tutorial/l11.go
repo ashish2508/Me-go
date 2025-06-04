@@ -12,6 +12,7 @@ func main(){
 	profile, err := getUserProfile(user.ID)
 		if err != nil {
 		fmt.Println(err)
+		fmt.Println("Failed to get user profile")
 		return
 	}
 }
