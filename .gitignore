@@ -1,4 +1,6 @@
 where.txt
+thunder-tests/
+vendor/
 .vscode/ 
 Me-go
 .env
