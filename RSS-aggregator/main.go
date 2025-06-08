@@ -5,10 +5,15 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/ashish2508/Me-go/internal/database"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
 )
+
+type apiConfig struct {
+	DB *database.Queries
+}
 
 func main() {
 	godotenv.Load(".env")
