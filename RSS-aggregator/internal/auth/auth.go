@@ -6,19 +6,18 @@ import (
 	"strings"
 )
 
-func GetApiKey(headers http.Header) (string, error) {
-	val := headers.Get("Authorization")
-	if val == "" {
-		return "", errors.New("no authentication info found")
+var ErrNoAuthHeaderIncluded = errors.New("no authorization header included")
+
+// GetAPIKey -
+func GetAPIKey(headers http.Header) (string, error) {
+	authHeader := headers.Get("Authorization")
+	if authHeader == "" {
+		return "", ErrNoAuthHeaderIncluded
+	}
+	splitAuth := strings.Split(authHeader, " ")
+	if len(splitAuth) < 2 || splitAuth[0] != "ApiKey" {
+		return "", errors.New("malformed authorization header")
 	}
 
-	vals := strings.Split(val, " ")
-	if len(vals) != 2  {
-		return "", errors.New("malformed auth header")
-	}
-	
-	if vals[0] != "ApiKey" {
-		return "", errors.New("malformed first part of auth header")
-	}
-return vals[1], nil
+	return splitAuth[1], nil
 }
