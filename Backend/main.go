@@ -15,12 +15,12 @@ func main() {
 		panic(err)
 	}
 	
-	app.Logger.Println("We are running out app")
+	app.Logger.Println("We are running our app")
 	
 	
 	http.HandleFunc("/health", HealthCheck)   
 	server := &http.Server{
-		Addr: ":8080",
+		Addr: ":8088",
 		IdleTimeout: time.Minute,
 		ReadTimeout: time.Second * 10,
 		WriteTimeout: 30 * time.Second,
